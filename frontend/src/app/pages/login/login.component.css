@@ -1,0 +1,17 @@
+.container-fluid {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 400px;
+  min-height: 300px;
+  background:#ced4da;
+  padding: 0 15px;
+  border-radius: 20px;
+}
+.mb-3{
+  padding: 5px;
+}

@@ -1,0 +1,17 @@
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">Dashboard</a>
+    <div class="faicon" style="display: flex;gap:30px">
+      <div>
+        <fa-icon matTooltip="logout" aria-label="Button that displays a tooltip when focused or hovered over"
+          [icon]="user" style="color: white;"></fa-icon>
+        &nbsp;<span class="text-light">{{role | titlecase}}</span>
+      </div>
+      <div>
+        <fa-icon matTooltip="logout" aria-label="Button that displays a tooltip when focused or hovered over"
+          [icon]="logout" style="color: white;" (click)="signout()"></fa-icon>
+        &nbsp;<span class="text-light">Logout</span>
+      </div>
+    </div>
+  </div>
+</nav>

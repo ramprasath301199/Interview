@@ -1,0 +1,40 @@
+<app-header />
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="filter mt-3" style="display:flex;gap:20px">
+        <div class="mb-3" style="width:400px">
+          <label class="form-label">Search By Fields</label>
+          <input type="text" class="form-control" #search name="" id="" aria-describedby="helpId"
+            placeholder="Search any Fields," (change)="onchange(search.value,role.value)" />
+        </div>
+        <div class="mb-3" style="width:400px">
+          <label class="form-label">Search By Role</label>
+          <select class="form-select form-select-md" #role (change)="onchange(search.value,role.value)">
+            <option value="">Select one</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="guest">Guest</option>
+          </select>
+        </div>
+      </div>
+      <div class="alldatas">
+        <ul>
+          @if(fill){
+          @if(filtered.length == 0){
+          <p class="text-danger">! No Users</p>
+          }@else{
+          @for (item of filtered; track $index) {
+          <li>{{item.FirstName}}&nbsp;{{item.LastName}}</li>
+          }
+          }
+          }@else {
+          @for (item of alldata; track $index) {
+          <li>{{item.FirstName + item.LastName}}</li>
+          }
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
